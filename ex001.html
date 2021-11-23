@@ -30,33 +30,38 @@
             <input type="number" name="preco" id="preco">
             <br>
             <label for="parcelas">Qual a quantidade de parcelas?</label>
-            <input type="number" name="parce" id="parce">
+            <input type="number" name="parcelas" id="parcelas">
             <br>
             <input type="submit" value="Calcular" id="button">
             <br>
-            <input type="submit" value="">
             <p id="result"></p>
         </form>
     </main>
     <script>
         function cal() {
-            let car = document.getElementById("carro")
+           let res = document.getElementById("result")
+            let car = document.getElementById("carro").value
             let pre = Number(document.getElementById("preco").value)
             let parc = Number(document.getElementById("parcelas").value)
             let crop
-            if (parcel >= 1 && parcel <= 8) {
-                crop
-            } else if (parcel >= 9 && parcel <= 16) {
-               crop  = 30
-            } else if (parcel >= 17 && parcel <= 25) {
-                crop = 70
+            if (parc >= 0 && parc <= 4) {
+                crop = 25 / 100
+                
+
+            } else if (parc >= 5 && parc <= 12) {
+               crop  = 25
+            } else if (parc >= 13 && parc <= 24) {
+                crop = 60
             } else {
-               crop  = 90
+               crop  = 80
             }
-            let promocao = (preco * crop) / 100
-            let money = prego + promocao
-        res
+            let promocao = (pre * crop) / 100
+            let money = pre + promocao
+         res.innerHTML = `O ${car} custava ${pre}, agora custar ${money}. Em parcelas ${parc} parcelas de ${money / parc}.`
+        return false
         } 
+
+        
     </script>
 </body>
 </html>
