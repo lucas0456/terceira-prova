@@ -9,14 +9,52 @@
 <body>
     <main>
         <h1>Salários de Funcionários</h1>
-        <form action="" onsubmit="return funcionário()">
-        <label for="funcionário">Quantos funcionários serão cadastrados </label>
-        <input type="number" name="" id="">
+        <form action="queijo.php" method="get" onsubmit="return funcionário()">
+        <label for="funcionário">Quantos funcionários serão cadastrados? </label>
+        <input type="number" name="fun" id="fun">
+        <br>
+        <input type="submit" value="Iniciar" id="button">
     </form>
-    <button id="Iniciar">Iniciar</button>
+    <section>
+        <h3> O resultado vai aparecer aqui..,</h3>
+        <p id="result"></p>
+    </section>
     </main>
     <script>
-        function funcio
+        let res = document.getElementById("result")
+        function funcionário() {
+        let func = Number(document.getElementById("fun").value)
+
+          let salário = 0
+          let total = 0
+          let menor = 0
+          let maior = 0
+
+          let cont = 1
+          while (cont <= func) {
+              salário = Number(prompt(`Qual é o salário do ${cont} funcionário`))
+              total += salário
+
+              if (cont == 1) {
+                  maior = salário 
+                  menor = salário
+                  
+              } else {
+                  if (salário > maior) {
+                      maior = salário
+                      
+                  } if (salário < menor) {
+                  menor = salário
+                } 
+              }
+              cont ++
+          }
+          res.innerHTML = `Os funcionários que estão cadastrados, a empresa que vai gasta ${total}, a média salarial dos funcionários é ${total / func}, o maior salário pago foi ${maior} e o menor salário pago foi ${menor}`
+          
+          
+          return false
+        }
+        
     </script>
 </body>
 </html>
