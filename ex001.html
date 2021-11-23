@@ -5,11 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 01</title>
+    <style>
+    body {
+            margin: auto;
+            background-color: aqua;
+            border-radius: 15px;
+            width: 600px;
+    } main {
+        border-radius: 15px;
+        background-color: white;
+        text-align: center;
+        height: 200px;
+    }
+    </style>
 </head>
 <body>
     <main>
         <h1>Calculadora de financiamento de carro</h1>
-        <form action="nada.php" onsubmit="return carro()">
+        <form action="requeijão.php" method="get" onsubmit="return cal()">
             <label for="carro">Qual é o modelo do seu carro?</label>
             <input type="text" name="carro" id="carro">
             <br>
@@ -17,17 +30,33 @@
             <input type="number" name="preco" id="preco">
             <br>
             <label for="parcelas">Qual a quantidade de parcelas?</label>
-            <input type="number" name="parcelas" id="parcelas">
+            <input type="number" name="parce" id="parce">
             <br>
-            <input type="submit" value="Calcular">
+            <input type="submit" value="Calcular" id="button">
+            <br>
+            <input type="submit" value="">
+            <p id="result"></p>
         </form>
     </main>
     <script>
-        function carro() {
-            window.alert("Funcionou")
-
-            return false
-        }
+        function cal() {
+            let car = document.getElementById("carro")
+            let pre = Number(document.getElementById("preco").value)
+            let parc = Number(document.getElementById("parcelas").value)
+            let crop
+            if (parcel >= 1 && parcel <= 8) {
+                crop
+            } else if (parcel >= 9 && parcel <= 16) {
+               crop  = 30
+            } else if (parcel >= 17 && parcel <= 25) {
+                crop = 70
+            } else {
+               crop  = 90
+            }
+            let promocao = (preco * crop) / 100
+            let money = prego + promocao
+        res
+        } 
     </script>
 </body>
 </html>
